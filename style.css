@@ -1,13 +1,20 @@
-body {
+html {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
     background-color: hsl(210, 46%, 95%);
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .container {
-    margin-top: 200px;
+    margin-top: 250px;
 }
 
 .content-container {
@@ -38,6 +45,7 @@ body {
 
 .text-container {
     margin: 40px;
+    width: 500px;
 }
 
 .text-container h1 {
@@ -84,7 +92,8 @@ body {
     align-items: center;
 }
 
-.share-btn {
+.share-btn-open {
+    
     background: hsl(212deg 15% 91%);
     border-radius: 50%;
     justify-content: center;
@@ -95,12 +104,12 @@ body {
     cursor: pointer;
 }
 
-.share-btn:hover {
+.share-btn-open:hover {
     background: hsl(217, 19%, 35%);
     color: white
 }
 
-.share-btn path:hover {
+.share-btn-open path:hover {
 
     fill: white;
 }
@@ -113,12 +122,15 @@ body {
 .show-modal {
     opacity: 1;
     visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.close-modal {
+    
+    visibility: hidden;
 }
 
 .social-icons {
-    
+
     position: absolute;
     right: -60px;
     text-align: center;
@@ -152,6 +164,75 @@ body {
     color: hsl(214, 17%, 51%);
 }
 
-.social-icon{
+.social-icon {
     cursor: pointer;
+}
+
+
+@media only screen and (max-width: 775px) {
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 360px;
+        height: 250px;
+        background: url(./images/drawers.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .description-container {
+        display: flex;
+        align-items: center;
+        width: 360px;
+        height: 360px;
+        background: white;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .text-container {
+        /* margin: 40px; */
+        width: 800px;
+    }
+
+    .container {
+        margin-top: 100px;
+    }
+
+    .social-icons {
+        position: absolute;
+        right: 0px;
+        text-align: center;
+        width: 360px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 80px;
+        border-radius: 10px;
+        bottom: -180px;
+        background: hsl(217, 19%, 35%);
+    }
+
+    .text-container p {
+        font-size: 13px;
+        color: hsl(214, 17%, 51%);
+        margin-bottom: 60px;
+    }
+
+}
+@media only screen and (min-width: 775px){
+    .share-btn-close{
+        display: none;
+    }
 }
